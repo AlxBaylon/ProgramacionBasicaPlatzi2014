@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Prototype</title>
+</head>
+
+<body>
+	<h1 id="perro"></h1>
+	<h2 id="gato"></h2>
+
+	<script type="text/javascript">
+		//esto es una función global, ergo, una mala práctica
+		var perro = "Roco"
+
+		//esto es una declaración de un objeto mediante prototype
+		//la clase se llama mascota
+		var Mascota = function(n, v) 
+		{
+			this.nombre = n;
+			this.voz = v;
+		}
+
+		Mascota.prototype.hablar = function() 
+		{
+			alert(this.voz);
+		}
+
+		//aquí declaro dos nuevas instancias de la clase Mascota
+		var perrito = new Mascota("Darkho", "guau");
+		var gato = new Mascota("Vodka", "miau");
+
+		var p = document.getElementById("perro");
+		var g = document.getElementById("gato");
+		p.innerHTML = perrito.nombre + " " + perrito.voz;
+		perrito.hablar();
+		g.innerHTML = gato.nombre + " " + gato.voz;
+		gato.hablar();
+
+	</script>
+</body>
+
+</html>

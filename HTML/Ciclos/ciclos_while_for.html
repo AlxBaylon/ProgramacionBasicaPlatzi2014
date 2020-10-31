@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8" />
+     <title>Ciclos</title>
+     <script type="text/javascript">
+     	//declaro variables globales que usaré en mis funciones delcaradas
+        var b, c, t;    
+        //función que calcula el factorial de un número
+        function calcular()
+        {
+        	var numero = Number(c.value);
+        	var revisarDecimales = numero - parseInt(numero);
+        	if(numero > 0 && revisarDecimales == 0)
+        	{ 
+        		var n = 1;
+        		var no = 1;
+        		while(n <= numero)
+        		{
+        			no = no*n;
+        			//esta sintaxis concatena al contenido ya existente del elemento HTML,
+        			//en este caso "t",
+        			//todo lo que esté a su izquierda antes del punto y coma
+        			n++;
+        		}
+        		//innerHTML modifica el contenido de la etiqueta HTML, por eso le puedo poner negritas, 
+        		//a diferencia del textContent que sólo me agrega texto a la etiqueta
+        		t.innerHTML += " <strong>"+ no +"</strong>";
+
+        	}
+        	else
+        	{
+                alert("Opcion inválida"); 
+                t.innerHTML = "";
+        	}
+
+        	
+        }
+
+     	function inicio()
+     	{
+     		//a mis variables ya declaradas, les asigno un objeto de HTML a través de su "id"
+     		 c = document.getElementById("caja");
+     	     b = document.getElementById("boton");
+     	     //en HTML "<div></div>" es una caja
+     	     t = document.getElementById("texto");
+     	     
+     	     //addEvenListener sirve para asignar alguna acción de código JavaScript,
+     	     //generalmente de una función, para realizar cambios o procesos en mi página, 
+     	     //a través de un evento sobre el elemento de HTML
+     	     b.addEventListener("click", calcular);
+        }
+     </script>
+</head>
+<body>
+     <h1>Es hora de aprender ciclos LOL</h1>
+     <p>LOL x2</p>
+     <input type="text" id="caja"/>
+     <input type="button" value="Tócame~~" id="boton">
+     <div id="texto"><strong></strong></div>
+     <script type="text/javascript">
+          inicio();
+     </script>
+</body>
+</html>
